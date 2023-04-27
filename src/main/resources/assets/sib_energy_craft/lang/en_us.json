@@ -5,5 +5,8 @@
   "block.sib_energy_craft.tin_cable": "Tin Cable",
   "block.sib_energy_craft.tin_cable_isolated": "Isolated Tin Cable",
 
-  "block.sib_energy_craft.glass_fibre_cable": "Glass Fibre Cable"
+  "block.sib_energy_craft.glass_fibre_cable": "Glass Fibre Cable",
+
+  "attribute.name.sib_energy_craft.energy_loss": "Loss: %d EU/p",
+  "attribute.name.sib_energy_craft.max_input_eu": "Max. Input: %d EU/p"
 }

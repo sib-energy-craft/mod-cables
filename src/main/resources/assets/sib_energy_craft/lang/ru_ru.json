@@ -5,5 +5,8 @@
   "block.sib_energy_craft.tin_cable": "Оловянный кабель",
   "block.sib_energy_craft.tin_cable_isolated": "Изолированный оловянный кабель",
 
-  "block.sib_energy_craft.glass_fibre_cable": "Кабель из стекловолокна"
+  "block.sib_energy_craft.glass_fibre_cable": "Кабель из стекловолокна",
+
+  "attribute.name.sib_energy_craft.energy_loss": "Потеря: %d EU/p",
+  "attribute.name.sib_energy_craft.max_input_eu": "Макс. вход: %d EU/p"
 }
