@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "sib_energy_craft:copper_cable",
+    "sib_energy_craft:copper_cable_isolated",
+    "sib_energy_craft:tin_cable",
+    "sib_energy_craft:tin_cable_isolated",
+    "sib_energy_craft:glass_fibre_cable"
+  ]
+}

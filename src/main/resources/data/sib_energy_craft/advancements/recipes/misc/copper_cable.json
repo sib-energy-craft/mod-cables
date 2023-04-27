@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sib_energy_craft:copper_cable"
+    ]
+  },
+  "criteria": {
+    "has_copper_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sib_energy_craft:copper_plate"
+            ]
+          }
+        ]
+      }
+    },
+    "has_metal_shears": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sib_energy_craft:metal_shears"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sib_energy_craft:copper_cable"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_copper_plate",
+      "has_metal_shears",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "ESE",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "E": {
+      "item": "sib_energy_craft:energy_dust"
+    },
+    "S": {
+      "item": "sib_energy_craft:silver_dust"
+    }
+  },
+  "result": {
+    "item": "sib_energy_craft:glass_fibre_cable",
+    "count": 6
+  }
+}

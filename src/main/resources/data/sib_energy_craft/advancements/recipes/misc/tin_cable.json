@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sib_energy_craft:tin_cable"
+    ]
+  },
+  "criteria": {
+    "has_tin_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sib_energy_craft:tin_plate"
+            ]
+          }
+        ]
+      }
+    },
+    "has_metal_shears": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sib_energy_craft:metal_shears"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sib_energy_craft:tin_cable"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tin_plate",
+      "has_metal_shears",
+      "has_the_recipe"
+    ]
+  ]
+}

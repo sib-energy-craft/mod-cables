@@ -1,0 +1,9 @@
+{
+  "block.sib_energy_craft.copper_cable": "Медный кабель",
+  "block.sib_energy_craft.copper_cable_isolated": "Изолированный медный кабель",
+
+  "block.sib_energy_craft.tin_cable": "Оловянный кабель",
+  "block.sib_energy_craft.tin_cable_isolated": "Изолированный оловянный кабель",
+
+  "block.sib_energy_craft.glass_fibre_cable": "Кабель из стекловолокна"
+}

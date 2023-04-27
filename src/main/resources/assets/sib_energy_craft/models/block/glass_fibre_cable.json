@@ -1,0 +1,6 @@
+{
+  "parent": "sib_energy_craft:block/template_cable_4",
+  "textures": {
+    "side": "sib_energy_craft:block/glass_fibre_cable"
+  }
+}
