@@ -10,7 +10,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum IsolationType {
     NOT_ISOLATED(0.0625f, true),
-    ISOLATED(0.125f, false);
+    ISOLATED(0.125f, false),
+    ISOLATED_X2(0.25f, false);
 
     public final float radius;
     public final boolean damage;

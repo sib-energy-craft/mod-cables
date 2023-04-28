@@ -5,13 +5,13 @@
   ],
   "key": {
     "C": {
-      "item": "sib_energy_craft:tin_cable"
+      "item": "sib_energy_craft:gold_cable"
     },
     "R": {
       "item": "sib_energy_craft:vulcanized_rubber"
     }
   },
   "result": {
-    "item": "sib_energy_craft:tin_cable_isolated"
+    "item": "sib_energy_craft:gold_cable_isolated"
   }
 }

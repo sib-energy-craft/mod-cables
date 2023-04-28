@@ -1,17 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "group": "gold_cable_isolated_x2",
   "pattern": [
     "CR"
   ],
   "key": {
     "C": {
-      "item": "sib_energy_craft:copper_cable"
+      "item": "sib_energy_craft:gold_cable_isolated"
     },
     "R": {
       "item": "sib_energy_craft:vulcanized_rubber"
     }
   },
   "result": {
-    "item": "sib_energy_craft:copper_cable_isolated"
+    "item": "sib_energy_craft:gold_cable_isolated_x2"
   }
 }

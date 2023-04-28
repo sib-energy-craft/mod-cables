@@ -12,4 +12,6 @@ import java.math.BigDecimal;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Constants {
     public static final BigDecimal LOSS_02 = new BigDecimal("0.2");
+
+    public static final BigDecimal LOSS_04 = new BigDecimal("0.4");
 }
