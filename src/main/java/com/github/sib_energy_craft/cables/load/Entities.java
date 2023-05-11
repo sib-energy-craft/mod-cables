@@ -8,7 +8,7 @@ import com.github.sib_energy_craft.cables.block.gold.entity.GoldCableIsolatedBlo
 import com.github.sib_energy_craft.cables.block.gold.entity.GoldCableIsolatedX2BlockEntity;
 import com.github.sib_energy_craft.cables.block.tin.entity.TinCableBlockEntity;
 import com.github.sib_energy_craft.cables.block.tin.entity.TinCableIsolatedBlockEntity;
-import com.github.sib_energy_craft.sec_utils.load.ModRegistrar;
+import com.github.sib_energy_craft.sec_utils.load.DefaultModInitializer;
 import net.minecraft.block.entity.BlockEntityType;
 
 import static com.github.sib_energy_craft.sec_utils.utils.EntityUtils.register;
@@ -17,7 +17,7 @@ import static com.github.sib_energy_craft.sec_utils.utils.EntityUtils.register;
  * @since 0.0.1
  * @author sibmaks
  */
-public final class Entities implements ModRegistrar {
+public final class Entities implements DefaultModInitializer {
     public static final BlockEntityType<CopperCableBlockEntity> COPPER_CABLE;
     public static final BlockEntityType<CopperCableIsolatedBlockEntity> COPPER_CABLE_ISOLATED;
 

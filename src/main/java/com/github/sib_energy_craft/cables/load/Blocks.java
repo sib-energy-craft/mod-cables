@@ -11,7 +11,7 @@ import com.github.sib_energy_craft.cables.block.tin.TinCableBlock;
 import com.github.sib_energy_craft.cables.block.tin.TinCableIsolatedBlock;
 import com.github.sib_energy_craft.energy_api.utils.Identifiers;
 import com.github.sib_energy_craft.sec_utils.common.Identified;
-import com.github.sib_energy_craft.sec_utils.load.ModRegistrar;
+import com.github.sib_energy_craft.sec_utils.load.DefaultModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.MapColor;
@@ -25,7 +25,7 @@ import static com.github.sib_energy_craft.sec_utils.utils.BlockUtils.register;
  * @since 0.0.1
  * @author sibmaks
  */
-public final class Blocks implements ModRegistrar {
+public final class Blocks implements DefaultModInitializer {
     public static final Identified<CopperCableBlock> COPPER_CABLE;
     public static final Identified<CopperCableIsolatedBlock> COPPER_CABLE_ISOLATED;
 
