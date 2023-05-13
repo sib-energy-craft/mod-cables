@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "sec-mod-cables",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "name": "SibEnergyCraft - Cables",
   "authors": [
     "sibmaks"
@@ -20,6 +20,9 @@
       "com.github.sib_energy_craft.cables.load.Blocks",
       "com.github.sib_energy_craft.cables.load.Entities",
       "com.github.sib_energy_craft.cables.load.Items"
+    ],
+    "client": [
+      "com.github.sib_energy_craft.cables.load.client.ClientBlocks"
     ]
   }
 }

@@ -12,11 +12,9 @@ import com.github.sib_energy_craft.cables.block.tin.TinCableIsolatedBlock;
 import com.github.sib_energy_craft.energy_api.utils.Identifiers;
 import com.github.sib_energy_craft.sec_utils.common.Identified;
 import com.github.sib_energy_craft.sec_utils.load.DefaultModInitializer;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.github.sib_energy_craft.sec_utils.utils.BlockUtils.register;
@@ -98,7 +96,6 @@ public final class Blocks implements DefaultModInitializer {
                     .strength(0.3f);
             var glassFibreCableBlock = new GlassFibreCableBlock(IsolationType.ISOLATED, glassCableSettings);
             GLASS_FIBRE_CABLE = register(Identifiers.of("glass_fibre_cable"), glassFibreCableBlock);
-            BlockRenderLayerMap.INSTANCE.putBlock(Blocks.GLASS_FIBRE_CABLE.entity(), RenderLayer.getTranslucent());
         }
     }
 }
