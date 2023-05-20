@@ -18,7 +18,8 @@ import org.jetbrains.annotations.Nullable;
  */
 public class CopperCableIsolatedBlock extends AbstractCableBlock {
 
-    public CopperCableIsolatedBlock(@NotNull IsolationType isolationType, @NotNull Settings settings) {
+    public CopperCableIsolatedBlock(@NotNull IsolationType isolationType,
+                                    @NotNull Settings settings) {
         super(isolationType, settings, EnergyLevel.L2, Constants.LOSS_02, () -> Entities.COPPER_CABLE_ISOLATED);
     }
 

@@ -21,7 +21,7 @@ public class CopperCableBlock extends AbstractCableBlock {
 
     public CopperCableBlock(@NotNull IsolationType isolationType,
                             @NotNull AbstractBlock.Settings settings) {
-        super(isolationType, settings, EnergyLevel.L2, Constants.LOSS_02, () -> Entities.COPPER_CABLE);
+        super(isolationType, settings, EnergyLevel.L2, Constants.LOSS_03, () -> Entities.COPPER_CABLE);
     }
 
     @Nullable

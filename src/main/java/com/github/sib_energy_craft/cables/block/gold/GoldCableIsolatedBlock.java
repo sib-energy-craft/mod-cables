@@ -20,7 +20,7 @@ public class GoldCableIsolatedBlock extends AbstractCableBlock {
 
     public GoldCableIsolatedBlock(@NotNull IsolationType isolationType,
                                   @NotNull Settings settings) {
-        super(isolationType, settings, EnergyLevel.L2, Constants.LOSS_04, () -> Entities.GOLD_CABLE_ISOLATED);
+        super(isolationType, settings, EnergyLevel.L3, Constants.LOSS_03, () -> Entities.GOLD_CABLE_ISOLATED);
     }
 
     @Nullable

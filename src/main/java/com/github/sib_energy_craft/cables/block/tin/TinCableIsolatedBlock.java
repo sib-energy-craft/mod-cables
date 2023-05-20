@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 public class TinCableIsolatedBlock extends AbstractCableBlock {
 
     public TinCableIsolatedBlock(@NotNull IsolationType isolationType, @NotNull Settings settings) {
-        super(isolationType, settings, EnergyLevel.L2, Constants.LOSS_02, () -> Entities.TIN_CABLE_ISOLATED);
+        super(isolationType, settings, EnergyLevel.L1, Constants.LOSS_01, () -> Entities.TIN_CABLE_ISOLATED);
     }
 
     @Nullable

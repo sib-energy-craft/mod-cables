@@ -16,17 +16,16 @@ import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.math.BigDecimal;
+import static com.github.sib_energy_craft.cables.constants.Constants.LOSS_0025;
 
 /**
  * @since 0.0.1
  * @author sibmaks
  */
 public class GlassFibreCableBlock extends AbstractCableBlock {
-    private static final BigDecimal LOSS = new BigDecimal("0.025");
 
     public GlassFibreCableBlock(@NotNull IsolationType isolationType, @NotNull Settings settings) {
-        super(isolationType, settings, EnergyLevel.L5, LOSS, () -> Entities.GLASS_FIBRE_CABLE);
+        super(isolationType, settings, EnergyLevel.L5, LOSS_0025, () -> Entities.GLASS_FIBRE_CABLE);
     }
 
     @Nullable

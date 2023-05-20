@@ -54,6 +54,7 @@ public abstract class AbstractCableBlockEntity extends BlockEntity implements En
 
     @Override
     public void receiveOffer(@NotNull EnergyOffer energyOffer) {
+
         upcomingOffers.add(energyOffer);
     }
 
