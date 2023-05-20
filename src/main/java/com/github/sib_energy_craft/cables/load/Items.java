@@ -22,6 +22,10 @@ public final class Items implements DefaultModInitializer {
     public static final CableBlockItem GOLD_CABLE_ISOLATED;
     public static final CableBlockItem GOLD_CABLE_ISOLATED_X2;
 
+    public static final CableBlockItem IRON_CABLE;
+    public static final CableBlockItem IRON_CABLE_ISOLATED;
+    public static final CableBlockItem IRON_CABLE_ISOLATED_X2;
+
     public static final CableBlockItem GLASS_FIBRE_CABLE;
 
     static {
@@ -53,6 +57,18 @@ public final class Items implements DefaultModInitializer {
 
         GOLD_CABLE_ISOLATED_X2 = register(ItemGroups.FUNCTIONAL,
                 Blocks.GOLD_CABLE_ISOLATED_X2,
+                it -> new CableBlockItem(it, emptySettings));
+
+        IRON_CABLE = register(ItemGroups.FUNCTIONAL,
+                Blocks.IRON_CABLE,
+                it -> new CableBlockItem(it, emptySettings));
+
+        IRON_CABLE_ISOLATED = register(ItemGroups.FUNCTIONAL,
+                Blocks.IRON_CABLE_ISOLATED,
+                it -> new CableBlockItem(it, emptySettings));
+
+        IRON_CABLE_ISOLATED_X2 = register(ItemGroups.FUNCTIONAL,
+                Blocks.IRON_CABLE_ISOLATED_X2,
                 it -> new CableBlockItem(it, emptySettings));
 
         GLASS_FIBRE_CABLE = register(ItemGroups.FUNCTIONAL,

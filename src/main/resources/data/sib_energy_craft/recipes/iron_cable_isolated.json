@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CR"
+  ],
+  "key": {
+    "C": {
+      "item": "sib_energy_craft:iron_cable"
+    },
+    "R": {
+      "item": "sib_energy_craft:vulcanized_rubber"
+    }
+  },
+  "result": {
+    "item": "sib_energy_craft:iron_cable_isolated"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "sib_energy_craft:block/iron_cable_dot"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "sib_energy_craft:block/iron_cable"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "sib_energy_craft:block/iron_cable",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "sib_energy_craft:block/iron_cable_alt"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "sib_energy_craft:block/iron_cable_alt",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "sib_energy_craft:block/iron_cable_alt",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "sib_energy_craft:block/iron_cable",
+        "x": 90
+      }
+    }
+  ]
+}

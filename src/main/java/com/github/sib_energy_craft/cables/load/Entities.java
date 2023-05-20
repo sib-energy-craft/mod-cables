@@ -6,6 +6,9 @@ import com.github.sib_energy_craft.cables.block.glass_fibre.entity.GlassFibreCab
 import com.github.sib_energy_craft.cables.block.gold.entity.GoldCableBlockEntity;
 import com.github.sib_energy_craft.cables.block.gold.entity.GoldCableIsolatedBlockEntity;
 import com.github.sib_energy_craft.cables.block.gold.entity.GoldCableIsolatedX2BlockEntity;
+import com.github.sib_energy_craft.cables.block.iron.entity.IronCableBlockEntity;
+import com.github.sib_energy_craft.cables.block.iron.entity.IronCableIsolatedBlockEntity;
+import com.github.sib_energy_craft.cables.block.iron.entity.IronCableIsolatedX2BlockEntity;
 import com.github.sib_energy_craft.cables.block.tin.entity.TinCableBlockEntity;
 import com.github.sib_energy_craft.cables.block.tin.entity.TinCableIsolatedBlockEntity;
 import com.github.sib_energy_craft.sec_utils.load.DefaultModInitializer;
@@ -28,6 +31,10 @@ public final class Entities implements DefaultModInitializer {
     public static final BlockEntityType<GoldCableIsolatedBlockEntity> GOLD_CABLE_ISOLATED;
     public static final BlockEntityType<GoldCableIsolatedX2BlockEntity> GOLD_CABLE_ISOLATED_X2;
 
+    public static final BlockEntityType<IronCableBlockEntity> IRON_CABLE;
+    public static final BlockEntityType<IronCableIsolatedBlockEntity> IRON_CABLE_ISOLATED;
+    public static final BlockEntityType<IronCableIsolatedX2BlockEntity> IRON_CABLE_ISOLATED_X2;
+
     public static final BlockEntityType<GlassFibreCableBlockEntity> GLASS_FIBRE_CABLE;
 
     static {
@@ -40,6 +47,10 @@ public final class Entities implements DefaultModInitializer {
         GOLD_CABLE = register(Blocks.GOLD_CABLE, GoldCableBlockEntity::new);
         GOLD_CABLE_ISOLATED = register(Blocks.GOLD_CABLE_ISOLATED, GoldCableIsolatedBlockEntity::new);
         GOLD_CABLE_ISOLATED_X2 = register(Blocks.GOLD_CABLE_ISOLATED_X2, GoldCableIsolatedX2BlockEntity::new);
+
+        IRON_CABLE = register(Blocks.IRON_CABLE, IronCableBlockEntity::new);
+        IRON_CABLE_ISOLATED = register(Blocks.IRON_CABLE_ISOLATED, IronCableIsolatedBlockEntity::new);
+        IRON_CABLE_ISOLATED_X2 = register(Blocks.IRON_CABLE_ISOLATED_X2, IronCableIsolatedX2BlockEntity::new);
 
         GLASS_FIBRE_CABLE = register(Blocks.GLASS_FIBRE_CABLE, GlassFibreCableBlockEntity::new);
     }

@@ -1,0 +1,6 @@
+{
+  "parent": "sib_energy_craft:block/template_cable_isolated",
+  "textures": {
+    "side": "sib_energy_craft:block/iron_cable_isolated"
+  }
+}

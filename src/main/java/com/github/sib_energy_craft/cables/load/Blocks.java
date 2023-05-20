@@ -7,6 +7,9 @@ import com.github.sib_energy_craft.cables.block.glass_fibre.GlassFibreCableBlock
 import com.github.sib_energy_craft.cables.block.gold.GoldCableBlock;
 import com.github.sib_energy_craft.cables.block.gold.GoldCableIsolatedBlock;
 import com.github.sib_energy_craft.cables.block.gold.GoldCableIsolatedX2Block;
+import com.github.sib_energy_craft.cables.block.iron.IronCableBlock;
+import com.github.sib_energy_craft.cables.block.iron.IronCableIsolatedBlock;
+import com.github.sib_energy_craft.cables.block.iron.IronCableIsolatedX2Block;
 import com.github.sib_energy_craft.cables.block.tin.TinCableBlock;
 import com.github.sib_energy_craft.cables.block.tin.TinCableIsolatedBlock;
 import com.github.sib_energy_craft.energy_api.utils.Identifiers;
@@ -33,6 +36,10 @@ public final class Blocks implements DefaultModInitializer {
     public static final Identified<GoldCableBlock> GOLD_CABLE;
     public static final Identified<GoldCableIsolatedBlock> GOLD_CABLE_ISOLATED;
     public static final Identified<GoldCableIsolatedX2Block> GOLD_CABLE_ISOLATED_X2;
+
+    public static final Identified<IronCableBlock> IRON_CABLE;
+    public static final Identified<IronCableIsolatedBlock> IRON_CABLE_ISOLATED;
+    public static final Identified<IronCableIsolatedX2Block> IRON_CABLE_ISOLATED_X2;
 
     public static final Identified<GlassFibreCableBlock> GLASS_FIBRE_CABLE;
 
@@ -83,6 +90,22 @@ public final class Blocks implements DefaultModInitializer {
 
             var goldCableIsolatedX2Block = new GoldCableIsolatedX2Block(IsolationType.ISOLATED_X2, cableIsolatedSettings);
             GOLD_CABLE_ISOLATED_X2 = register(Identifiers.of("gold_cable_isolated_x2"), goldCableIsolatedX2Block);
+        }
+
+        {
+            var cableMaterial = new Material.Builder(MapColor.IRON_GRAY).build();
+            var goldCableSettings = AbstractBlock.Settings
+                    .of(cableMaterial)
+                    .strength(0.3f)
+                    .sounds(BlockSoundGroup.METAL);
+            var cableBlock = new IronCableBlock(IsolationType.NOT_ISOLATED, goldCableSettings);
+            IRON_CABLE = register(Identifiers.of("iron_cable"), cableBlock);
+
+            var cableIsolatedBlock = new IronCableIsolatedBlock(IsolationType.ISOLATED, cableIsolatedSettings);
+            IRON_CABLE_ISOLATED = register(Identifiers.of("iron_cable_isolated"), cableIsolatedBlock);
+
+            var cableIsolatedX2Block = new IronCableIsolatedX2Block(IsolationType.ISOLATED_X2, cableIsolatedSettings);
+            IRON_CABLE_ISOLATED_X2 = register(Identifiers.of("iron_cable_isolated_x2"), cableIsolatedX2Block);
         }
 
         {

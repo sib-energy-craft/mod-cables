@@ -8,6 +8,9 @@
     "sib_energy_craft:glass_fibre_cable",
     "sib_energy_craft:gold_cable",
     "sib_energy_craft:gold_cable_isolated",
-    "sib_energy_craft:gold_cable_isolated_x2"
+    "sib_energy_craft:gold_cable_isolated_x2",
+    "sib_energy_craft:iron_cable",
+    "sib_energy_craft:iron_cable_isolated",
+    "sib_energy_craft:iron_cable_isolated_x2"
   ]
 }
