@@ -17,7 +17,7 @@ import com.github.sib_energy_craft.sec_utils.common.Identified;
 import com.github.sib_energy_craft.sec_utils.load.DefaultModInitializer;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.github.sib_energy_craft.sec_utils.utils.BlockUtils.register;
@@ -44,16 +44,14 @@ public final class Blocks implements DefaultModInitializer {
     public static final Identified<GlassFibreCableBlock> GLASS_FIBRE_CABLE;
 
     static {
-        var cableIsolatedMaterial = new Material.Builder(MapColor.BLACK).build();
-        var cableIsolatedSettings = AbstractBlock.Settings
-                .of(cableIsolatedMaterial)
+        var cableIsolatedSettings = AbstractBlock.Settings.create()
+                .mapColor(MapColor.BLACK)
                 .strength(0.3f)
                 .sounds(BlockSoundGroup.BASALT);
 
         {
-            var copperCableMaterial = new Material.Builder(MapColor.ORANGE).build();
-            var copperCableSettings = AbstractBlock.Settings
-                    .of(copperCableMaterial)
+            var copperCableSettings = AbstractBlock.Settings.create()
+                    .mapColor(MapColor.ORANGE)
                     .strength(0.3f)
                     .sounds(BlockSoundGroup.METAL);
             var copperCableBlock = new CopperCableBlock(IsolationType.NOT_ISOLATED, copperCableSettings);
@@ -64,9 +62,8 @@ public final class Blocks implements DefaultModInitializer {
         }
 
         {
-            var tinCableMaterial = new Material.Builder(MapColor.WATER_BLUE).build();
-            var tinCableSettings = AbstractBlock.Settings
-                    .of(tinCableMaterial)
+            var tinCableSettings = AbstractBlock.Settings.create()
+                    .mapColor(MapColor.WATER_BLUE)
                     .strength(0.3f)
                     .sounds(BlockSoundGroup.METAL);
             var tinCableBlock = new TinCableBlock(IsolationType.NOT_ISOLATED, tinCableSettings);
@@ -77,9 +74,8 @@ public final class Blocks implements DefaultModInitializer {
         }
 
         {
-            var goldCableMaterial = new Material.Builder(MapColor.GOLD).build();
-            var goldCableSettings = AbstractBlock.Settings
-                    .of(goldCableMaterial)
+            var goldCableSettings = AbstractBlock.Settings.create()
+                    .mapColor(MapColor.GOLD)
                     .strength(0.3f)
                     .sounds(BlockSoundGroup.METAL);
             var goldCableBlock = new GoldCableBlock(IsolationType.NOT_ISOLATED, goldCableSettings);
@@ -93,9 +89,8 @@ public final class Blocks implements DefaultModInitializer {
         }
 
         {
-            var cableMaterial = new Material.Builder(MapColor.IRON_GRAY).build();
-            var goldCableSettings = AbstractBlock.Settings
-                    .of(cableMaterial)
+            var goldCableSettings = AbstractBlock.Settings.create()
+                    .mapColor(MapColor.IRON_GRAY)
                     .strength(0.3f)
                     .sounds(BlockSoundGroup.METAL);
             var cableBlock = new IronCableBlock(IsolationType.NOT_ISOLATED, goldCableSettings);
@@ -109,8 +104,8 @@ public final class Blocks implements DefaultModInitializer {
         }
 
         {
-            var glassCableSettings = AbstractBlock.Settings
-                    .of(Material.GLASS)
+            var glassCableSettings = AbstractBlock.Settings.create()
+                    .instrument(Instrument.HAT)
                     .sounds(BlockSoundGroup.GLASS)
                     .nonOpaque()
                     .solidBlock((state, world, pos) -> false)
