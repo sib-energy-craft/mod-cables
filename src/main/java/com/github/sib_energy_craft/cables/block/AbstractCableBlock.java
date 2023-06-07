@@ -53,13 +53,13 @@ public abstract class AbstractCableBlock extends ConnectingBlock implements Bloc
     @Getter
     private final BigDecimal resistance;
     private final IsolationType type;
-    private final Supplier<BlockEntityType<? extends AbstractCableBlockEntity>> blockEntityType;
+    private final Supplier<BlockEntityType<? extends AbstractCableBlockEntity<?>>> blockEntityType;
 
     public AbstractCableBlock(@NotNull IsolationType type,
                               @NotNull Settings settings,
                               @NotNull EnergyLevel energyLevel,
                               @NotNull BigDecimal resistance,
-                              @NotNull Supplier<BlockEntityType<? extends AbstractCableBlockEntity>> blockEntityType) {
+                              @NotNull Supplier<BlockEntityType<? extends AbstractCableBlockEntity<?>>> blockEntityType) {
         super(type.radius, settings);
         this.type = type;
         this.energyLevel = energyLevel;
@@ -185,7 +185,7 @@ public abstract class AbstractCableBlock extends ConnectingBlock implements Bloc
             return;
         }
         var blockEntity = world.getBlockEntity(pos);
-        if (!(blockEntity instanceof AbstractCableBlockEntity cableBlockEntity)) {
+        if (!(blockEntity instanceof AbstractCableBlockEntity<?> cableBlockEntity)) {
             return;
         }
         var energyOffer = cableBlockEntity.getMostValuableOffer();

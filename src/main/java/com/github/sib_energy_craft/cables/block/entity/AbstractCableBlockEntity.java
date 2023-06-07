@@ -4,47 +4,50 @@ import com.github.sib_energy_craft.cables.block.AbstractCableBlock;
 import com.github.sib_energy_craft.energy_api.EnergyLevel;
 import com.github.sib_energy_craft.energy_api.EnergyOffer;
 import com.github.sib_energy_craft.energy_api.cable.EnergyCable;
+import com.github.sib_energy_craft.energy_api.supplier.EnergySupplier;
 import lombok.Getter;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @since 0.0.1
  * @author sibmaks
  */
-public abstract class AbstractCableBlockEntity extends BlockEntity implements EnergyCable {
-    private final AbstractCableBlock cableBlock;
-    private final Set<EnergyOffer> upcomingOffers;
+public abstract class AbstractCableBlockEntity<T extends AbstractCableBlock> extends BlockEntity
+        implements EnergyCable {
+    private final T cableBlock;
+    private final Map<EnergySupplier, EnergyOffer> upcomingOffers;
     @Getter
     private volatile EnergyOffer mostValuableOffer;
 
     public AbstractCableBlockEntity(@NotNull BlockEntityType<? extends AbstractCableBlockEntity> type,
                                     @NotNull BlockPos pos,
                                     @NotNull BlockState state,
-                                    @NotNull AbstractCableBlock cableBlock) {
+                                    @NotNull T cableBlock) {
         super(type, pos, state);
         this.cableBlock = cableBlock;
-        this.upcomingOffers = new ConcurrentSkipListSet<>();
+        this.upcomingOffers = new ConcurrentHashMap<>();
     }
 
     public static void tick(@NotNull World world,
                             @NotNull BlockPos pos,
                             @NotNull BlockState state,
-                            @NotNull AbstractCableBlockEntity blockEntity) {
-        if (world.isClient) {
+                            @NotNull AbstractCableBlockEntity<?> blockEntity) {
+        if(world.isClient || !(world instanceof ServerWorld serverWorld)) {
             return;
         }
-        blockEntity.tick(blockEntity);
-        AbstractCableBlockEntity.markDirty(world, pos, state);
+        blockEntity.tick(serverWorld, blockEntity);
+        markDirty(world, pos, state);
     }
 
     @Override
@@ -54,15 +57,24 @@ public abstract class AbstractCableBlockEntity extends BlockEntity implements En
 
     @Override
     public void receiveOffer(@NotNull EnergyOffer energyOffer) {
-
-        upcomingOffers.add(energyOffer);
+        upcomingOffers.compute(energyOffer.getSource(), (key, val) -> {
+            if(val == null) {
+                return energyOffer;
+            }
+           return energyOffer.compareTo(val) > 0 ? energyOffer : val;
+        });
     }
 
     @Override
-    public @NotNull Set<EnergyOffer> retrieveUpcomingOffers() {
-        var upcomingOffers = new HashSet<>(this.upcomingOffers);
-        this.upcomingOffers.removeAll(upcomingOffers);
-        mostValuableOffer = upcomingOffers.stream().max(EnergyOffer::compareTo).orElse(null);
+    public @NotNull Map<EnergySupplier, EnergyOffer> retrieveUpcomingOffers() {
+        var upcomingOffers = new HashMap<>(this.upcomingOffers);
+        for (var entry : upcomingOffers.entrySet()) {
+            this.upcomingOffers.remove(entry.getKey(), entry.getValue());
+        }
+        mostValuableOffer = upcomingOffers.values()
+                .stream()
+                .max(EnergyOffer::compareTo)
+                .orElse(null);
         return upcomingOffers;
     }
 

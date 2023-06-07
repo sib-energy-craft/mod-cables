@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @since 0.0.1
  * @author sibmaks
  */
-public class GlassFibreCableBlockEntity extends AbstractCableBlockEntity {
+public class GlassFibreCableBlockEntity extends AbstractCableBlockEntity<GlassFibreCableBlock> {
     public GlassFibreCableBlockEntity(@NotNull BlockPos pos,
                                       @NotNull BlockState state,
                                       @NotNull GlassFibreCableBlock block) {
